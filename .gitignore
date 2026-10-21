@@ -1,0 +1,11 @@
+# System & OS
+.DS_Store
+Thumbs.db
+
+# OpenCode & Temp Files
+.opencode/
+*.tmp
+*.log
+
+# Chromium Generated Cache
+_metadata/

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <!-- Center Logo & Counter (The ON/OFF Switch) -->
+  <div class="logo-container" id="logoBtn" title="Click to toggle protection">
+    <img src="../../icon.png" alt="Blockku" class="logo-img">
+    <span class="counter-text" id="blockedCount">0</span>
+  </div>
+
+  <!-- Details List -->
+  <div class="details">
+    <div class="detail-row">
+      <div class="label-wrapper">
+        <span class="detail-label">Protection</span>
+        <span class="info-icon">?</span>
+        <div class="tooltip-box">Global protection state. Click the logo to toggle.</div>
+      </div>
+      <span class="status-text" id="statusText">Active</span>
+    </div>
+
+    <div class="detail-row">
+      <div class="label-wrapper">
+        <span class="detail-label">Website</span>
+      </div>
+      <a class="detail-value detail-link" id="currentHostLink" target="_blank" title="">-</a>
+    </div>
+
+    <div class="detail-row">
+      <div class="label-wrapper">
+        <span class="detail-label">Whitelist</span>
+        <span class="info-icon">?</span>
+        <div class="tooltip-box">Pause blocking only on this website.</div>
+      </div>
+      <button class="action-btn" id="whitelistBtn">Add to whitelist</button>
+    </div>
+
+    <div class="detail-row" id="reportRow">
+      <div class="label-wrapper">
+        <span class="detail-label">Feedback</span>
+        <span class="info-icon">?</span>
+        <div class="tooltip-box">Report broken layout or unblocked ads.</div>
+      </div>
+      <button class="report-btn" id="reportBtn">Report website</button>
+    </div>
+  </div>
+
+  <!-- Non-intrusive Inline Confirmation Bar for Report -->
+  <div class="inline-confirm" id="inlineConfirm">
+    <span class="confirm-text">Report ads/breakage on this site?</span>
+    <div class="confirm-actions">
+      <button class="confirm-btn" id="confirmNo">Cancel</button>
+      <button class="confirm-btn yes" id="confirmYes">Confirm</button>
+    </div>
+  </div>
+
+  <!-- Inline Confirmation Bar for Tab Reload (Toggle ON/OFF & Whitelist) -->
+  <div class="inline-confirm" id="reloadConfirm">
+    <span class="confirm-text">Reload page to apply changes?</span>
+    <div class="confirm-actions">
+      <button class="confirm-btn" id="reloadNo">Not now</button>
+      <button class="confirm-btn yes" id="reloadYes">Reload</button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

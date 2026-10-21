@@ -1,0 +1,248 @@
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 240px;
+      padding: 22px 18px 18px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #ffffff;
+      color: #111827;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      user-select: none;
+      position: relative;
+    }
+
+    /* Logo Center (Main Switch) */
+    .logo-container {
+      position: relative;
+      cursor: pointer;
+      display: inline-block;
+      margin-bottom: 24px;
+      transition: transform 0.15s ease;
+    }
+    .logo-container:active {
+      transform: scale(0.96);
+    }
+    .logo-img {
+      width: 90px;
+      height: auto;
+      display: block;
+      transition: opacity 0.25s ease, filter 0.25s ease;
+    }
+
+    /* Disabled State */
+    .logo-container.disabled .logo-img {
+      opacity: 0.35;
+      filter: grayscale(100%);
+    }
+
+    /* Number directly touching the bottom-right corner of the logo */
+    .counter-text {
+      position: absolute;
+      right: 4px;
+      bottom: 2px;
+      font-size: 26px;
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+      color: #dc2626;
+      line-height: 1;
+      pointer-events: none;
+      transition: opacity 0.25s ease, color 0.25s ease, transform 0.15s ease;
+    }
+    .counter-text.pulse {
+      transform: scale(1.2);
+    }
+    .logo-container.disabled .counter-text {
+      color: #9ca3af;
+      opacity: 0.5;
+    }
+
+    /* Details Section */
+    .details {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      border-top: 1px solid #f3f4f6;
+      padding-top: 14px;
+    }
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+    }
+
+    /* Label with Tooltip Wrapper */
+    .label-wrapper {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      position: relative;
+    }
+    .detail-label {
+      color: #6b7280;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Info Icon for Tooltip */
+    .info-icon {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #f3f4f6;
+      color: #9ca3af;
+      font-size: 9px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: help;
+      transition: all 0.15s ease;
+    }
+    .label-wrapper:hover .info-icon {
+      background: #e5e7eb;
+      color: #4b5563;
+    }
+
+    /* Clean Floating Tooltip Box */
+    .tooltip-box {
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 0;
+      background: #1f2937;
+      color: #f9fafb;
+      font-size: 10px;
+      font-weight: 500;
+      line-height: 1.35;
+      padding: 5px 8px;
+      border-radius: 5px;
+      white-space: normal;
+      width: 160px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      pointer-events: none;
+      z-index: 50;
+      transition: opacity 0.15s ease, transform 0.15s ease;
+      transform: translateY(3px);
+    }
+    .label-wrapper:hover .tooltip-box {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .detail-value {
+      color: #1f2937;
+      font-weight: 600;
+      max-width: 130px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .detail-link {
+      color: #2563eb;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .detail-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Status Text (Clean text badge, not a switch) */
+    .status-text {
+      font-weight: 700;
+      font-size: 11px;
+      color: #16a34a;
+      transition: color 0.2s ease;
+    }
+    .status-text.off {
+      color: #9ca3af;
+    }
+
+    /* Whitelist Action Link (Clean subtle action, matches Report) */
+    .action-btn {
+      background: none;
+      border: none;
+      color: #2563eb;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 0;
+      transition: opacity 0.15s ease;
+    }
+    .action-btn:hover {
+      opacity: 0.8;
+      text-decoration: underline;
+    }
+    .action-btn.active {
+      color: #dc2626;
+    }
+
+    /* Report Button */
+    .report-btn {
+      background: none;
+      border: none;
+      color: #dc2626;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 0;
+      transition: opacity 0.15s ease;
+    }
+    .report-btn:hover {
+      opacity: 0.8;
+      text-decoration: underline;
+    }
+    .report-btn.reported {
+      color: #9ca3af;
+      cursor: default;
+      text-decoration: none;
+      opacity: 0.7;
+    }
+
+    /* Bottom Inline Confirmation Bar */
+    .inline-confirm {
+      display: none;
+      width: 100%;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px dashed #e5e7eb;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .inline-confirm.show {
+      display: flex;
+    }
+    .confirm-text {
+      font-size: 10px;
+      color: #6b7280;
+      text-align: center;
+    }
+    .confirm-actions {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+    }
+    .confirm-btn {
+      font-size: 10px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 4px;
+      border: 1px solid #e5e7eb;
+      background: #ffffff;
+      color: #4b5563;
+      cursor: pointer;
+    }
+    .confirm-btn.yes {
+      background: #dc2626;
+      border-color: #dc2626;
+      color: #ffffff;
+    }

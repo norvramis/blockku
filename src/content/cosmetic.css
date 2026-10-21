@@ -1,0 +1,130 @@
+/* Blockku Cosmetic Shield */
+
+:is(html:not(.blockku-disabled)) :is(
+  /* 1. Ad Containers & Adsterra wrappers */
+  div[id^="container-"],
+  div[id*="revenuecpmgate"],
+
+  /* 2. D3ward / TurtleCute Bait Containers (#cts_test, #ad_ctd) & Generic test bait */
+  #cts_test,
+  #ad_ctd,
+  .textads,
+  .banner-ads,
+  .banner_ads,
+  .ad-unit,
+  .afs_ads,
+  .ad-zone,
+  .ad-space,
+  .adsbox,
+  .adbox,
+  .adbox-wrapper,
+  .adSocial,
+  [src*="pr_advertising_ads_banner"],
+  [data*="pr_advertising_ads_banner"],
+  div[data-ads],
+  div[id^="yandex_rtb_"],
+
+  /* 3. Modal & Interstitial Ads */
+  #an-modal,
+  .an-advert-banner,
+  .interstitial-wrapper,
+  .interads-modal,
+  [id*="interads"],
+  [class*="interads"],
+  div[class*="interads"],
+
+  /* 4. Banner wrappers */
+  .banner-ad,
+  .ad-slot,
+  .ad-box,
+  .ad-banner,
+  .ad-container,
+  .advertisement,
+  .adsbygoogle,
+  [class^="ad-banner"],
+  [class*=" ad-banner"],
+  [id^="ad-banner"],
+  [class^="ads-"],
+  [class*=" ads-"],
+  [class*="taboola"],
+  [id*="taboola"],
+  [class*="outbrain"],
+  [id*="outbrain"],
+  [data-ad-unit],
+  [data-ad-client],
+  [data-ad-slot],
+  [data-google-query-id],
+
+  /* 5. Third-party ad iframes */
+  iframe[src*="revenuecpmgate"],
+  iframe[src*="cloudpiko"],
+  iframe[src*="kettledrooping"],
+  iframe[src*="portalfluently"],
+  iframe[src*="doubleclick"],
+  iframe[src*="adsystem"],
+  iframe[src*="adnxs"],
+  iframe[src*="criteo"],
+  iframe[src*="taboola"],
+  iframe[src*="outbrain"],
+  iframe[src*="exoclick"],
+  iframe[src*="popads"],
+  iframe[src*="smartadserver"],
+  iframe[src*="bannersnack"],
+  iframe[src*="ybs2ffs7v"],
+  iframe[src*="12ezo5v60"],
+  iframe[src*="fvcwqkkqmuv"],
+
+  /* 6. Video player ad overlays (FluidPlayer / VAST / LK21 videonode) */
+  #uyeouyeo,
+  a#uyeouyeo,
+  .pub_300x250,
+  .fluid_ad_container,
+  .fluid_video_wrapper .vast_video,
+  .fluid_ad_banner,
+  .fluid_ad_cta,
+  .fluid_ad_countdown,
+  .fluid_ad_playing,
+
+  /* 7. Indonesian Manga & Streaming Ad Networks */
+  .agc-ad-slot,
+  .agc-ad-label,
+  .agc-lazy-ad,
+  #agc-lazy-ads,
+  .klan,
+  .klan-float-bottom,
+  .kln,
+  #kln-block,
+  .slotiklan,
+  .slotiklan-topdesktop,
+  .gambar_pemanis,
+  .gulai_asam_manis,
+  #teaserbottom,
+  #teaser1,
+  #teaser2,
+  #teaser3,
+  #floatbanner,
+  #floatcenter,
+  #wp-iklan-overlay,
+  .floating-ad,
+  .floating-ads,
+  a[href*="cek.to"],
+  a[href*="linkfast.vip"],
+  a[href*="menangjudi"],
+  img[src*="gmbr.pro"],
+  img[src*="88cdn.cloud"],
+  img[src*="Bandar36"],
+  picture:has(img[src*="88cdn.cloud"]),
+  picture:has(source[srcset*="Bandar36"]),
+  div:has(> a[href*="cek.to"]),
+  div:has(> a[href*="linkfast.vip"]),
+  div:has(> a[href*="menangjudi"])
+) {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0px !important;
+  max-height: 0px !important;
+  width: 0px !important;
+  max-width: 0px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
